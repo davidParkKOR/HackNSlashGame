@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-
     void Update()
     {
         inputVec.x = Input.GetAxisRaw("Horizontal");
@@ -34,7 +33,6 @@ public class Player : MonoBehaviour
         if (inputVec.x != 0){            
             sprite.flipX = inputVec.x < 0; //left : -1, right : +1
         }
-
     }
 
     void FixedUpdate()
@@ -42,7 +40,5 @@ public class Player : MonoBehaviour
         Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nextVec);
     }
-
-
 
 }
